@@ -1,0 +1,56 @@
+{
+    "name": "sierratecnologia/gamer",
+    "description": "Game",
+    "type": "library",
+    "keywords": [
+        "sierratecnologia",
+        "gamer",
+        "points",
+        "pointable",
+        "laravel",
+        "loyalty",
+        "reward"
+    ],
+    "license": "MIT",
+    "homepage": "https://sierratecnologia.com/packages/gamer/",
+    "support": {
+        "email": "help@sierratecnologia.com",
+        "issues": "https://github.com/sierratecnologia/gamer/issues",
+        "source": "https://github.com/sierratecnologia/gamer",
+        "docs": "https://github.com/sierratecnologia/gamer/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "SierraTecnologia",
+            "homepage": "https://sierratecnologia.com.br",
+            "email": "help@sierratecnologia.com.br"
+        }
+    ],
+    "require": {
+        "sierratecnologia/audit": "^0.4.0",
+        "markrogoyski/math-php": "*",
+        "php-ai/php-ml": ">=0.8",
+        "spatie/laravel-event-sourcing": "^4.3",
+        "jordanbrauer/unit-converter": "^0.8.4",
+        "lorisleiva/laravel-actions": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gamer\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [],
+        "post-update-cmd": [],
+        "post-create-project-cmd": []
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gamer\\GamerProvider"
+            ]
+        }
+    }
+}
