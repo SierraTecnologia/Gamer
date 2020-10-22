@@ -293,13 +293,18 @@ class GamerProvider extends ServiceProvider
      */
     protected function publishMigration()
     {
+        $this->publishes(
+            [
+            $viewsPath => base_path('resources/views/vendor/tecnico'),
+            ], ['migrations', 'gamer', 'gamer-migrations', 'rica', 'rica-migrations']
+        );
         // @todo
         // if (! class_exists('TecnicoSetupTables')) {
         //     // Publish the migration
         //     $timestamp = date('Y_m_d_His', time());
         //     $this->publishes([
         //         __DIR__.'/../database/migrations/2016_05_18_000000_tecnico_setup_tables.php' => database_path('migrations/'.$timestamp.'_tecnico_setup_tables.php'),
-        //       ], 'migrations');
+        //       ],, ['migrations', 'gamer', 'gamer-migrations', 'rica', 'rica-migrations']);
         // }
     }
 

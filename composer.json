@@ -36,6 +36,8 @@
     ],
     "require": {
         "sierratecnologia/audit": "dev-master",
+        "sierratecnologia/pedreiro": "dev-master",
+        "sierratecnologia/muleta": "dev-master",
         "markrogoyski/math-php": "*",
         "php-ai/php-ml": ">=0.8",
         "spatie/laravel-event-sourcing": "^4.3",
