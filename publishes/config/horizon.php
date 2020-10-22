@@ -1,3 +1,6 @@
+<?php
+
+return [
 'environments' => [
     'production' => [
 
@@ -25,3 +28,4 @@
         ],
     ],
 ],
+];

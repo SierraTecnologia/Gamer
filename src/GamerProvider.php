@@ -198,7 +198,9 @@ class GamerProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->getPublishesPath('config/gamer.php'), 'gamer');
+        $this->mergeConfigFrom(__DIR__.'/../publishes/config/gamer.php', 'gamer');
+        // $this->mergeConfigFrom(__DIR__.'/../publishes/config/horizon.php', 'horizon');
+        // $this->mergeConfigFrom(__DIR__.'/../publishes/config/event-sourcing.php', 'event-sourcing');
         
 
         $this->setProviders();
@@ -260,13 +262,9 @@ class GamerProvider extends ServiceProvider
      */
     public function registerDirectories()
     {
-        // Publish config files
-        $this->publishes(
-            [
-            // Paths
-            $this->getPublishesPath('config/sitec') => config_path('sitec'),
-            ], ['config',  'sitec', 'sitec-config']
-        );
+
+        $this->publishConfig();
+        $this->publishMigration();
 
         // // Publish gamer css and js to public directory
         // $this->publishes([
@@ -277,6 +275,34 @@ class GamerProvider extends ServiceProvider
         $this->loadTranslations();
     }
 
+    /**
+     * Publish Tecnico configuration.
+     */
+    protected function publishConfig()
+    {
+        // Publish config files
+        $this->publishes([
+            __DIR__.'/../publishes/config/gamer.php' => config_path('gamer.php'),
+            __DIR__.'/../publishes/config/event-sourcing.php' => config_path('event-sourcing.php'),
+            __DIR__.'/../publishes/config/horizon.php' => config_path('horizon.php'),
+        ], ['config', 'gamer', 'gamer-config', 'rica', 'rica-config']);
+    }
+
+    /**
+     * Publish Tecnico migration.
+     */
+    protected function publishMigration()
+    {
+        // @todo
+        // if (! class_exists('TecnicoSetupTables')) {
+        //     // Publish the migration
+        //     $timestamp = date('Y_m_d_His', time());
+        //     $this->publishes([
+        //         __DIR__.'/../database/migrations/2016_05_18_000000_tecnico_setup_tables.php' => database_path('migrations/'.$timestamp.'_tecnico_setup_tables.php'),
+        //       ], 'migrations');
+        // }
+    }
+
     private function loadViews()
     {
         // View namespace
@@ -285,7 +311,7 @@ class GamerProvider extends ServiceProvider
         $this->publishes(
             [
             $viewsPath => base_path('resources/views/vendor/gamer'),
-            ], ['views',  'sitec', 'sitec-views']
+            ], ['views', 'gamer', 'gamer-views', 'rica', 'rica-views']
         );
     }
     
@@ -295,7 +321,7 @@ class GamerProvider extends ServiceProvider
         $this->publishes(
             [
             $this->getResourcesPath('lang') => resource_path('lang/vendor/gamer')
-            ], ['lang',  'sitec', 'sitec-lang', 'translations']
+            ], ['lang', 'gamer', 'gamer-lang', 'rica', 'rica-lang', 'translations']
         );
 
         // Load translations
