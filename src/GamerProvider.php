@@ -295,7 +295,7 @@ class GamerProvider extends ServiceProvider
     {
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/tecnico'),
+                __DIR__.'/../database/migrations' => database_path('migrations'),
             ], ['migrations', 'gamer', 'gamer-migrations', 'rica', 'rica-migrations']
         );
         // @todo
