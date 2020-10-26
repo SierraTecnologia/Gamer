@@ -107,7 +107,7 @@ class GamerProvider extends ServiceProvider
                 'icon' => 'fas fa-fw fa-search',
                 'icon_color' => "blue",
                 'label_color' => "success",
-                'section' => "master",
+                'section' => "admin",
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
             ],
             'Gamer' => [
