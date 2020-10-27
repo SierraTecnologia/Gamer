@@ -3,6 +3,7 @@
 namespace Gamer\Http\Controllers\RiCa;
 
 use Gamer\Services\RootService;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
