@@ -22,7 +22,7 @@ class ConnectorService
 
     public function __construct()
     {
-        // $this->imageRepo = App::make('App\Repositories\ImageRepository');
+        // $this->imageRepo = App::make('MediaManager\Repositories\ImageRepository');
     }
     public function extract()
     {

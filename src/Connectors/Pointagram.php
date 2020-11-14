@@ -328,7 +328,7 @@ class Pointagram
 
             $curlInfo = curl_getinfo($ch);
             $prIds = [];
-            dd($result);
+            // dd($result);
             foreach ($result as $teamResult) {
                 $team = new CompetitionEntity();
                 $team->setName($teamResult['name']);
@@ -361,7 +361,7 @@ class Pointagram
 
             $curlInfo = curl_getinfo($ch);
             $prIds = [];
-            dd($result);
+            
             foreach ($result as $teamResult) {
                 $team = new CompetitionPlayerEntity();
                 $team->setName($teamResult['name']);
