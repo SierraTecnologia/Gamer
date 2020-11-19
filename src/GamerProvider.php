@@ -88,7 +88,7 @@ class GamerProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "master",
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 // [
                 //     'text'        => 'Root',
@@ -97,7 +97,7 @@ class GamerProvider extends ServiceProvider
                 //     'icon_color'  => 'blue',
                 //     'label_color' => 'success',
                 //     'section' => "master",
-                //     // 'access' => \App\Models\Role::$ADMIN
+                //     // 'access' => \Porteiro\Models\Role::$ADMIN
                 // ],
                 // ],
         ],
@@ -118,7 +118,7 @@ class GamerProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "admin",
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Badges (Metalhas)',
@@ -127,7 +127,7 @@ class GamerProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "admin",
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Challenges (Competições)',
@@ -136,7 +136,7 @@ class GamerProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "admin",
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Guests (Desafios)',
@@ -145,7 +145,7 @@ class GamerProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "admin",
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
             ],
         ],

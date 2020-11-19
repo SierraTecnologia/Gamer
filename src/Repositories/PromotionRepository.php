@@ -4,7 +4,7 @@ namespace Gamer\Repositories;
 
 use Siravel\Models\Negocios\Promotion;
 use App\Repositories\CmsRepository;
-use App\Repositories\TranslationRepository;
+use Translation\Repositories\TranslationRepository;
 
 class PromotionRepository extends CmsRepository
 {
