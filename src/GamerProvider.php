@@ -79,74 +79,59 @@ class GamerProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Painel' => [
-            // 'Gamer' => [
-                [
-                    'text'        => 'Gamification',
-                    'route'       => 'profile.gamer.home',
-                    'icon'        => 'fas fa-fw fa-gamepad',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "master",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                // [
-                //     'text'        => 'Root',
-                //     'route'       => 'rica.gamer.home',
-                //     'icon'        => 'fas fa-fw fa-flag',
-                //     'icon_color'  => 'blue',
-                //     'label_color' => 'success',
-                //     'section' => "master",
-                //     // 'access' => \Porteiro\Models\Role::$ADMIN
-                // ],
-                // ],
+        [
+            'text'        => 'Meus Pontos',
+            'route'       => 'profile.gamer.home',
+            'icon'        => 'fas fa-fw fa-gamepad',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'section' => "profile",
+            // 'access' => \Porteiro\Models\Role::$ADMIN
         ],
-        'Admin' => [
+        [
+            'text' => 'Gamificação',
+            'icon' => 'fas fa-fw fa-search',
+            'icon_color' => "blue",
+            'label_color' => "success",
+            'section'   => 'admin',
+            'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        ],
+        'Gamificação' => [
             [
-                'text' => 'Gamer',
-                'icon' => 'fas fa-fw fa-search',
-                'icon_color' => "blue",
-                'label_color' => "success",
+                'text'        => 'Score de Pontos',
+                'route'       => 'profile.gamer.home',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
                 'section' => "admin",
-                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
-            'Gamer' => [
-                [
-                    'text'        => 'Score de Pontos',
-                    'route'       => 'profile.gamer.home',
-                    'icon'        => 'fas fa-fw fa-gamepad',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Badges (Metalhas)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Challenges (Competições)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Guests (Desafios)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
+            [
+                'text'        => 'Badges (Metalhas)',
+                'route'       => 'rica.gamer.home',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Challenges (Competições)',
+                'route'       => 'rica.gamer.home',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Guests (Desafios)',
+                'route'       => 'rica.gamer.home',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
         ],
     ];
