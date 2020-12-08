@@ -1,6 +1,6 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
 use Gamer\Models\ScoreSerie;
 

@@ -1,20 +1,21 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\ScoreSeriesPointType;
+use Gamer\Models\Competition;
 
-class ScoreSeriesPointTypeEntity extends AbstractEntity
+class CompetitionEntity extends AbstractEntity
 {
-    protected $model = ScoreSeriesPointType::class;
+    protected $model = Competition::class;
 
     private $id;
+    private $name;
     private $external = [
         'pointagram' => null,
     ];
 
     /**
-     * ScoreSeriesPointTypeEntity constructor.
+     * CompetitionEntity constructor.
      *
      * @param array $attributes
      */
@@ -32,7 +33,7 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): ScoreSeriesPointTypeEntity
+    private function setId(int $id): CompetitionEntity
     {
         $this->id = $id;
 
@@ -45,6 +46,14 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
     public function getId(): int
     {
         return $this->id;
+    }
+    public function getName(): string
+    {
+        return $this->name;
+    }
+    public function setName($value): void
+    {
+        $this->name = $value;
     }
     public function getExternal(string $service): string
     {

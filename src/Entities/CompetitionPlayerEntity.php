@@ -1,12 +1,12 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\Competition;
+use Gamer\Models\CompetitionPlayer;
 
-class CompetitionEntity extends AbstractEntity
+class CompetitionPlayerEntity extends AbstractEntity
 {
-    protected $model = Competition::class;
+    protected $model = CompetitionPlayer::class;
 
     private $id;
     private $name;
@@ -15,7 +15,7 @@ class CompetitionEntity extends AbstractEntity
     ];
 
     /**
-     * CompetitionEntity constructor.
+     * CompetitionPlayerEntity constructor.
      *
      * @param array $attributes
      */
@@ -33,7 +33,7 @@ class CompetitionEntity extends AbstractEntity
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): CompetitionEntity
+    private function setId(int $id): CompetitionPlayerEntity
     {
         $this->id = $id;
 

@@ -1,13 +1,16 @@
 <?php
+/**
+ * @todo Levar isso para o Integrations
+ */
 
 namespace Gamer\Connectors;
 
-use Gamer\Entitys\PlayerEntity;
-use Gamer\Entitys\TeamEntity;
-use Gamer\Entitys\CompetitionEntity;
-use Gamer\Entitys\CompetitionPlayerEntity;
-use Gamer\Entitys\ScoreSerieEntity;
-use Gamer\Entitys\ScoreSeriesPointTypeEntity;
+use Gamer\Entities\PlayerEntity;
+use Gamer\Entities\TeamEntity;
+use Gamer\Entities\CompetitionEntity;
+use Gamer\Entities\CompetitionPlayerEntity;
+use Gamer\Entities\ScoreSerieEntity;
+use Gamer\Entities\ScoreSeriesPointTypeEntity;
 use Illuminate\Support\Collection;
 
 /**
@@ -24,7 +27,7 @@ class Pointagram
      */
     private function isAuthenticated()
     {
-        if (!$this->uri || !config('gamer.services.pointagram') || !config('gamer.services.pointagram_user', 'ricardo@ricasolucoes.com.br')) {
+        if (!$this->uri || !config('gamer.services.pointagram', false) || !config('gamer.services.pointagram_user', 'ricardo@ricasolucoes.com.br')) {
             echo "Not authenticated\n";
             return false;
         }
@@ -41,7 +44,7 @@ class Pointagram
     private function prepCurl($url, $postArray = null)
     {
         $headers = array(
-            'api_key: ' . config('gamer.services.pointagram'),
+            'api_key: ' . config('gamer.services.pointagram', null),
             'api_user: ' . config('gamer.services.pointagram_user', 'ricardo@ricasolucoes.com.br'),
             'Content-Type: application/json',
             // 'Authorization: Basic ' . $this->encodedCredential

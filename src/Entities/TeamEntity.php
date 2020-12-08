@@ -1,21 +1,22 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\CompetitionPlayer;
+use Gamer\Models\Team;
 
-class CompetitionPlayerEntity extends AbstractEntity
+class TeamEntity extends AbstractEntity
 {
-    protected $model = CompetitionPlayer::class;
+    protected $model = Team::class;
 
     private $id;
     private $name;
+    private $icon;
     private $external = [
         'pointagram' => null,
     ];
 
     /**
-     * CompetitionPlayerEntity constructor.
+     * TeamEntity constructor.
      *
      * @param array $attributes
      */
@@ -27,13 +28,16 @@ class CompetitionPlayerEntity extends AbstractEntity
         if (isset($attributes['name']) && !is_null($attributes['name'])) {
             $this->setName($attributes['name']);
         }
+        if (isset($attributes['icon']) && !is_null($attributes['icon'])) {
+            $this->setIcon($attributes['icon']);
+        }
     }
 
     /**
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): CompetitionPlayerEntity
+    private function setId(int $id): TeamEntity
     {
         $this->id = $id;
 
@@ -54,6 +58,14 @@ class CompetitionPlayerEntity extends AbstractEntity
     public function setName($value): void
     {
         $this->name = $value;
+    }
+    public function getIcon(): string
+    {
+        return $this->icon;
+    }
+    public function setIcon($value): void
+    {
+        $this->icon = $value;
     }
     public function getExternal(string $service): string
     {

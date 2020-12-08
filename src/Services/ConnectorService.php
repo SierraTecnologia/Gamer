@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 
-use Gamer\Entitys\PlayerEntity;
-use Gamer\Entitys\TeamEntity;
-use Gamer\Entitys\CompetitionEntity;
-use Gamer\Entitys\CompetitionPlayerEntity;
-use Gamer\Entitys\ScoreSerieEntity;
-use Gamer\Entitys\ScoreSeriesPointTypeEntity;
+use Gamer\Entities\PlayerEntity;
+use Gamer\Entities\TeamEntity;
+use Gamer\Entities\CompetitionEntity;
+use Gamer\Entities\CompetitionPlayerEntity;
+use Gamer\Entities\ScoreSerieEntity;
+use Gamer\Entities\ScoreSeriesPointTypeEntity;
 
 class ConnectorService
 {
