@@ -3,7 +3,6 @@
 namespace Gamer\Entities;
 
 use Illuminate\Support\Collection;
-
 use Illuminate\Contracts\Support\Arrayable;
 use JsonSerializable;
 
