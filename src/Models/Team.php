@@ -16,6 +16,14 @@ class Team extends Base
         'name',
         'icon',
     ];
+    public $formFields = [
+        ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
+        ['name' => 'description', 'label' => 'Description', 'type' => 'textarea'],
+    ];
+    public $indexFields = [
+        'name',
+        'description',
+    ];
 
     protected $mappingProperties = array(
         /**

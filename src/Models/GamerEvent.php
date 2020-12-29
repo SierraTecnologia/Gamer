@@ -22,6 +22,20 @@ class GamerEvent extends Model
       'position',
       'value'
     ];
+    
+    public $formFields = [
+        ['name' => 'event', 'label' => 'Event', 'type' => 'text'],
+        ['name' => 'position', 'label' => 'Position', 'type' => 'text'],
+        ['name' => 'value', 'label' => 'Value', 'type' => 'text'],
+        ['name' => 'user_id', 'label' => 'User', 'type' => 'select', 'relationship' => 'user'],
+    ];
+
+    public $indexFields = [
+        'event',
+        'user_id',
+        'position',
+        'value'
+    ];
 
   
     // /**

@@ -98,6 +98,24 @@ class GamerProvider extends ServiceProvider
         ],
         'Gamificação' => [
             [
+                'text'        => 'Tipos de Pontos',
+                'route'       => 'rica.gamer.pointTypes.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Challenges (Competições)',
+                'route'       => 'rica.gamer.competitions.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
                 'text'        => 'Score de Pontos',
                 'route'       => 'profile.gamer.home',
                 'icon'        => 'fas fa-fw fa-gamepad',
@@ -108,15 +126,6 @@ class GamerProvider extends ServiceProvider
             ],
             [
                 'text'        => 'Badges (Metalhas)',
-                'route'       => 'rica.gamer.home',
-                'icon'        => 'fas fa-fw fa-flag',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                'section' => "admin",
-                // 'access' => \Porteiro\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Challenges (Competições)',
                 'route'       => 'rica.gamer.home',
                 'icon'        => 'fas fa-fw fa-flag',
                 'icon_color'  => 'blue',
@@ -145,10 +154,10 @@ class GamerProvider extends ServiceProvider
         // Register configs, migrations, etc
         $this->registerDirectories();
 
-        // // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
-        // $this->app->booted(function () {
-        //     $this->routes();
-        // });
+        // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
+        $this->app->booted(function () {
+            $this->routes();
+        });
 
         //
         $this->app['events']->listen(
@@ -189,7 +198,7 @@ class GamerProvider extends ServiceProvider
         
 
         $this->setProviders();
-        $this->routes();
+        // $this->routes();
 
 
 
