@@ -63,7 +63,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tecnico\\Tests\\": "tests"
+            "Gamer\\Tests\\": "tests"
         }
     },
     "scripts": {

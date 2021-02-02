@@ -270,7 +270,7 @@ class GamerProvider extends ServiceProvider
     }
 
     /**
-     * Publish Tecnico configuration.
+     * Publish Gamer configuration.
      */
     protected function publishConfig()
     {
@@ -283,7 +283,7 @@ class GamerProvider extends ServiceProvider
     }
 
     /**
-     * Publish Tecnico migration.
+     * Publish Gamer migration.
      */
     protected function publishMigration()
     {
@@ -293,7 +293,7 @@ class GamerProvider extends ServiceProvider
             ], ['migrations', 'gamer', 'gamer-migrations', 'rica', 'rica-migrations']
         );
         // @todo
-        // if (! class_exists('TecnicoSetupTables')) {
+        // if (! class_exists('GamerSetupTables')) {
         //     // Publish the migration
         //     $timestamp = date('Y_m_d_His', time());
         //     $this->publishes([

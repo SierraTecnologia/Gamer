@@ -1,4 +1,4 @@
-# Versioning for Facilitador
+# Versioning for Gamer
 
 We try to follow [semver](http://semver.org/) versioning standards as best we can.
 
