@@ -4883,7 +4883,7 @@
                 "fzaninotto/faker": ">=1.8",
                 "guzzlehttp/guzzle": "^6.3|^7.0",
                 "nesbot/carbon": ">=2.0|1.*",
-                "php": "^7.4"
+                "php": "^7.2|^8.0"
             },
             "require-dev": {
                 "ext-intl": "*",
@@ -4952,7 +4952,7 @@
             "require": {
                 "kassner/log-parser": "^2.0",
                 "laravel/telescope": "^3.0 || ^4.0",
-                "php": "^7.4",
+                "php": "^7.2|^8.0",
                 "rap2hpoutre/laravel-log-viewer": "^1.5",
                 "sierratecnologia/muleta": "dev-master",
                 "sierratecnologia/pedreiro": "dev-master",
@@ -5165,7 +5165,7 @@
                 "illuminate/support": "^7.0 || ^8.0",
                 "illuminate/translation": "^7.0 || ^8.0",
                 "illuminate/view": "^7.0 || ^8.0",
-                "php": "^7.4"
+                "php": "^7.2|^8.0"
             },
             "replace": {
                 "anahkiasen/former": "*",
@@ -5323,7 +5323,7 @@
                 "illuminate/support": "^7.0 || ^8.0",
                 "jmikola/geojson": "^1.0",
                 "jordanbrauer/unit-converter": "^0.8.4",
-                "php": "^7.4",
+                "php": "^7.2|^8.0",
                 "ricardosierra/database": "^0.21",
                 "ricardosierra/translation": "dev-master",
                 "ricardosierra/validate": "dev-master",
@@ -5404,7 +5404,7 @@
             },
             "require": {
                 "laravel/helpers": "^1.1",
-                "php": "^7.4",
+                "php": "^7.2|^8.0",
                 "ricardosierra/changelog": "~1.4",
                 "sierratecnologia/crypto": "dev-master"
             },
@@ -5497,7 +5497,7 @@
                 "laravelcollective/html": "^6.0|^7.0",
                 "league/csv": "^9.0",
                 "maatwebsite/excel": ">=3.1",
-                "php": "^7.4",
+                "php": "^7.2|^8.0",
                 "ramsey/uuid": "^4.0",
                 "rap2hpoutre/fast-excel": "^1.7|^2.0",
                 "ricardosierra/changelog": "~1.4",
@@ -5681,7 +5681,7 @@
                 "illuminate/events": "^6.0|^7.0|^8.0",
                 "illuminate/support": "^6.0|^7.0|^8.0",
                 "league/flysystem": "^1.0.45",
-                "php": "^7.4",
+                "php": "^7.2|^8.0",
                 "spatie/laravel-schemaless-attributes": "^1.6",
                 "symfony/finder": "^4.2|^5.0",
                 "symfony/property-access": "^4.0|^5.0",
