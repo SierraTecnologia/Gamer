@@ -85,6 +85,7 @@ class GamerProvider extends ServiceProvider
             'icon'        => 'fas fa-fw fa-gamepad',
             'icon_color'  => 'blue',
             'label_color' => 'success',
+            'order' => 260,
             'section' => "profile",
             'feature' => 'gamer',
             'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
@@ -96,6 +97,7 @@ class GamerProvider extends ServiceProvider
             'icon' => 'fas fa-fw fa-search',
             'icon_color' => "blue",
             'label_color' => "success",
+            'order' => 2100,
             'section'   => 'admin',
             'feature' => 'gamer',
             'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
@@ -108,6 +110,7 @@ class GamerProvider extends ServiceProvider
                 'icon'        => 'fas fa-fw fa-gamepad',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
+                'order' => 2100,
                 'section' => "admin",
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
@@ -117,6 +120,7 @@ class GamerProvider extends ServiceProvider
                 'icon'        => 'fas fa-fw fa-flag',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
+                'order' => 2100,
                 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
@@ -129,6 +133,7 @@ class GamerProvider extends ServiceProvider
                 'icon'        => 'fas fa-fw fa-gamepad',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
+                'order' => 2100,
                 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
@@ -141,6 +146,7 @@ class GamerProvider extends ServiceProvider
                 'icon'        => 'fas fa-fw fa-flag',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
+                'order' => 2100,
                 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
@@ -153,6 +159,7 @@ class GamerProvider extends ServiceProvider
                 'icon'        => 'fas fa-fw fa-flag',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
+                'order' => 2100,
                 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
