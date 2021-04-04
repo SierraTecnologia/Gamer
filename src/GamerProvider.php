@@ -94,7 +94,7 @@ class GamerProvider extends ServiceProvider
         ],
         [
             'text' => 'Gamificação',
-            'icon' => 'fas fa-fw fa-search',
+            'icon' => 'fas fa-fw fa-dice',
             'icon_color' => "blue",
             'label_color' => "success",
             'order' => 2100,
