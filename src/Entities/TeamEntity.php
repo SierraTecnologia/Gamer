@@ -47,11 +47,11 @@ class TeamEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -59,7 +59,7 @@ class TeamEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getIcon(): string
+    public function getIcon()
     {
         return $this->icon;
     }

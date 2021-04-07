@@ -43,11 +43,11 @@ class ScoreSerieEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -55,7 +55,7 @@ class ScoreSerieEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getExternal(string $service): string
+    public function getExternal(string $service)
     {
         return $this->external[$service];
     }

@@ -53,11 +53,11 @@ class PlayerEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -65,7 +65,7 @@ class PlayerEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getEmail(): string
+    public function getEmail()
     {
         return $this->email;
     }
@@ -73,7 +73,7 @@ class PlayerEntity extends AbstractEntity
     {
         $this->email = $value;
     }
-    public function getExternal(string $service): string
+    public function getExternal(string $service)
     {
         return $this->external[$service];
     }
