@@ -5,8 +5,8 @@ Route::get('home', 'HomeController@index')->name('home');
 Route::resource('/competitions', 'CompetitionController')->parameters([
     'competitions' => 'id'
 ]);
-Route::resource('/competitionPlayer', 'CompetitionPlayerController')->parameters([
-    'competitionPlayer' => 'id'
+Route::resource('/competitionPlayers', 'CompetitionPlayerController')->parameters([
+    'competitionPlayers' => 'id'
 ]);
 
 

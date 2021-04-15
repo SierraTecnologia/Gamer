@@ -98,22 +98,12 @@ class GamerProvider extends ServiceProvider
             'icon_color' => "blue",
             'label_color' => "success",
             'order' => 2100,
-            'section'   => 'admin',
+            // 'section'   => 'admin',
             'feature' => 'gamer',
             'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
             'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
         ],
         'Gamificação' => [
-            [
-                'text'        => 'Tipos de Pontos',
-                'route'       => 'rica.gamer.pointTypes.index',
-                'icon'        => 'fas fa-fw fa-gamepad',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                'order' => 2100,
-                'section' => "admin",
-                // 'access' => \Porteiro\Models\Role::$ADMIN
-            ],
             [
                 'text'        => 'Challenges (Competições)',
                 'route'       => 'rica.gamer.competitions.index',
@@ -121,51 +111,163 @@ class GamerProvider extends ServiceProvider
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
                 'order' => 2100,
-                'section' => "admin",
+                // 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                 'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
             [
-                'text'        => 'Score de Pontos',
-                'route'       => 'profile.gamer.home',
+                'text'        => 'Jogadores de (Competições)',
+                'route'       => 'rica.gamer.competitionPlayers.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Pontos',
+                'route'       => 'rica.gamer.points.index',
                 'icon'        => 'fas fa-fw fa-gamepad',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
                 'order' => 2100,
-                'section' => "admin",
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Tipos de Pontos',
+                'route'       => 'rica.gamer.pointTypes.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'GamerEvents',
+                'route'       => 'rica.gamer.gamerEvents.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Jogadores',
+                'route'       => 'rica.gamer.players.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Questions',
+                'route'       => 'rica.gamer.questions.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Questions Responses',
+                'route'       => 'rica.gamer.questionResponses.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Score de Pontos',
+                'route'       => 'rica.gamer.scoreSeries.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                 'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
             [
-                'text'        => 'Badges (Metalhas)',
-                'route'       => 'rica.gamer.home',
-                'icon'        => 'fas fa-fw fa-flag',
+                'text'        => 'Tipos de Score de Pontos',
+                'route'       => 'rica.gamer.scoreSeriePointTypes.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
                 'order' => 2100,
-                'section' => "admin",
+                // 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                 'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
             [
-                'text'        => 'Guests (Desafios)',
-                'route'       => 'rica.gamer.home',
+                'text'        => 'Times',
+                'route'       => 'rica.gamer.teams.index',
                 'icon'        => 'fas fa-fw fa-flag',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
                 'order' => 2100,
-                'section' => "admin",
+                // 'section' => "admin",
                 'feature' => 'gamer',
                 'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                 'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                 // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
+            [
+                'text'        => 'Transações',
+                'route'       => 'rica.gamer.transactions.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            // [
+            //     'text'        => 'Badges (Metalhas)',
+            //     'route'       => 'rica.gamer.home',
+            //     'icon'        => 'fas fa-fw fa-flag',
+            //     'icon_color'  => 'blue',
+            //     'label_color' => 'success',
+            //     'order' => 2100,
+            //     // 'section' => "admin",
+            //     'feature' => 'gamer',
+            //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            //     // 'access' => \Porteiro\Models\Role::$ADMIN
+            // ],
+            // [
+            //     'text'        => 'Guests (Desafios)',
+            //     'route'       => 'rica.gamer.home',
+            //     'icon'        => 'fas fa-fw fa-flag',
+            //     'icon_color'  => 'blue',
+            //     'label_color' => 'success',
+            //     'order' => 2100,
+            //     // 'section' => "admin",
+            //     'feature' => 'gamer',
+            //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            //     // 'access' => \Porteiro\Models\Role::$ADMIN
+            // ],
         ],
     ];
 
