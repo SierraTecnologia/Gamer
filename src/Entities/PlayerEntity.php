@@ -32,10 +32,10 @@ class PlayerEntity extends AbstractEntity
             $this->setName($attributes['Name']);
         }
         if (isset($attributes['email']) && !is_null($attributes['email'])) {
-            $this->setName($attributes['email']);
+            $this->setEmail($attributes['email']);
         }
         if (isset($attributes['emailaddress']) && !is_null($attributes['emailaddress'])) {
-            $this->setName($attributes['emailaddress']);
+            $this->setEmail($attributes['emailaddress']);
         }
     }
 
@@ -94,9 +94,15 @@ class PlayerEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
+            'email' => $this->getEmail(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

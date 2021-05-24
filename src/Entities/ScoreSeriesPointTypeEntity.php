@@ -9,6 +9,7 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
     protected $model = ScoreSeriesPointType::class;
 
     private $id;
+    private $name;
     private $external = [
         'pointagram' => null,
     ];
@@ -67,9 +68,14 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }
