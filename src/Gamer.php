@@ -7,7 +7,7 @@ namespace Gamer;
 
 use App\Models\User;
 use Arrilot\Widgets\Facade as Widget;
-use Bkwld\Library;
+use Muleta\Library;
 use Config;
 use Siravel\Models\Negocios\Menu;
 use Siravel\Models\Negocios\MenuItem;
