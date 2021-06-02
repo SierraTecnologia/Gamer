@@ -32,21 +32,27 @@ class ConnectorService
             $entity->persist();
         });
 
-        $p->listTeams()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listTeams()->map(function(TeamEntity $entity) {
             $entity->persist();
         });
 
-        $p->listCompetitions()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listCompetitions()->map(function(CompetitionEntity $entity) {
             $entity->persist();
         });
-        $p->listCompetitionPlayers()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listCompetitionPlayers()->map(function(CompetitionPlayerEntity $entity) {
             $entity->persist();
         });
+
         
         $p->listScoreSeries()->map(function(ScoreSerieEntity $entity) {
+            dd($entity);
             $entity->persist();
         });
-        $p->listScoreSeriesPointTypes()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listScoreSeriesPointTypes()->map(function(ScoreSeriesPointTypeEntity $entity) {
             $entity->persist();
         });
     }
