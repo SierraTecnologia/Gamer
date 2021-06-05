@@ -48,7 +48,6 @@ class ConnectorService
 
         
         $p->listScoreSeries()->map(function(ScoreSerieEntity $entity) {
-            dd($entity);
             $entity->persist();
         });
 

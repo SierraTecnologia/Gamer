@@ -414,7 +414,7 @@ class Pointagram
             $curlInfo = curl_getinfo($ch);
             $prIds = [];
             if (!empty($result)){
-                dd('PointagranService2', $result);
+                // dd('PointagranService2', $result);
                 foreach ($result as $teamResult) {
                     $team = new ScoreSeriesPointTypeEntity();
                     $team->setName($teamResult['name']);
