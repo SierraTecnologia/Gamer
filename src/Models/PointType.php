@@ -14,10 +14,17 @@ class PointType extends Base
      */
     protected $fillable = [
         'name',
-        'cpf',
-        'email',
-        'role_id'
+        'Description',
     ];
+    public $formFields = [
+        ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
+        ['name' => 'description', 'label' => 'Description', 'type' => 'textarea'],
+    ];
+    public $indexFields = [
+        'name',
+        'description',
+    ];
+
 
     protected $mappingProperties = array(
         /**

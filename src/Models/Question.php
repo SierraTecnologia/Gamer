@@ -45,6 +45,14 @@ class Question extends Base
 
         'relation',
     ];
+    public $formFields = [
+        ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
+        ['name' => 'description', 'label' => 'Description', 'type' => 'textarea'],
+    ];
+    public $indexFields = [
+        'name',
+        'description',
+    ];
 
     /**
      * Retorna Todos os Requisitos para que essa Pergunta possa ser feita!

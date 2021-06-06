@@ -2,7 +2,7 @@
 
 namespace Gamer\Services\Points;
 
-use Gamer\Entitys\Points\Type;
+use Gamer\Entities\Points\Type;
 
 class PageService
 {

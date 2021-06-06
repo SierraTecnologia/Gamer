@@ -18,7 +18,7 @@ class PromotionRepository extends CmsRepository
     {
         $this->model = $model;
         $this->translationRepo = $translationRepo;
-        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'promotions';
+        $this->table = \Illuminate\Support\Facades\Config::get('siravel.db-prefix').'promotions';
     }
 
     /**
@@ -47,7 +47,7 @@ class PromotionRepository extends CmsRepository
     {
         $payload['slug'] = str_slug($payload['slug']);
 
-        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('cms.default-language', 'en')) {
+        if (!empty($payload['lang']) && $payload['lang'] !== \Illuminate\Support\Facades\Config::get('siravel.default-language', 'en')) {
             return $this->translationRepo->createOrUpdate($widget->id, 'Siravel\Models\Negocios\Promotion', $payload['lang'], $payload);
         } else {
             unset($payload['lang']);

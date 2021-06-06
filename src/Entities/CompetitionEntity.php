@@ -1,6 +1,6 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
 use Gamer\Models\Competition;
 
@@ -43,7 +43,7 @@ class CompetitionEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -55,7 +55,7 @@ class CompetitionEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getExternal(string $service): string
+    public function getExternal(string $service)
     {
         return $this->external[$service];
     }
@@ -76,9 +76,14 @@ class CompetitionEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

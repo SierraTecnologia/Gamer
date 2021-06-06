@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
 
-use Gamer\Entitys\PlayerEntity;
-use Gamer\Entitys\TeamEntity;
-use Gamer\Entitys\CompetitionEntity;
-use Gamer\Entitys\CompetitionPlayerEntity;
-use Gamer\Entitys\ScoreSerieEntity;
-use Gamer\Entitys\ScoreSeriesPointTypeEntity;
+use Gamer\Entities\PlayerEntity;
+use Gamer\Entities\TeamEntity;
+use Gamer\Entities\CompetitionEntity;
+use Gamer\Entities\CompetitionPlayerEntity;
+use Gamer\Entities\ScoreSerieEntity;
+use Gamer\Entities\ScoreSeriesPointTypeEntity;
 
 class ConnectorService
 {
@@ -32,21 +32,26 @@ class ConnectorService
             $entity->persist();
         });
 
-        $p->listTeams()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listTeams()->map(function(TeamEntity $entity) {
             $entity->persist();
         });
 
-        $p->listCompetitions()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listCompetitions()->map(function(CompetitionEntity $entity) {
             $entity->persist();
         });
-        $p->listCompetitionPlayers()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listCompetitionPlayers()->map(function(CompetitionPlayerEntity $entity) {
             $entity->persist();
         });
+
         
         $p->listScoreSeries()->map(function(ScoreSerieEntity $entity) {
             $entity->persist();
         });
-        $p->listScoreSeriesPointTypes()->map(function(ScoreSerieEntity $entity) {
+
+        $p->listScoreSeriesPointTypes()->map(function(ScoreSeriesPointTypeEntity $entity) {
             $entity->persist();
         });
     }

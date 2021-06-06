@@ -1,20 +1,22 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\ScoreSeriesPointType;
+use Gamer\Models\Team;
 
-class ScoreSeriesPointTypeEntity extends AbstractEntity
+class TeamEntity extends AbstractEntity
 {
-    protected $model = ScoreSeriesPointType::class;
+    protected $model = Team::class;
 
     private $id;
+    private $name;
+    private $icon;
     private $external = [
         'pointagram' => null,
     ];
 
     /**
-     * ScoreSeriesPointTypeEntity constructor.
+     * TeamEntity constructor.
      *
      * @param array $attributes
      */
@@ -26,13 +28,16 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
         if (isset($attributes['name']) && !is_null($attributes['name'])) {
             $this->setName($attributes['name']);
         }
+        if (isset($attributes['icon']) && !is_null($attributes['icon'])) {
+            $this->setIcon($attributes['icon']);
+        }
     }
 
     /**
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): ScoreSeriesPointTypeEntity
+    private function setId(int $id): TeamEntity
     {
         $this->id = $id;
 
@@ -42,9 +47,25 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
+    }
+    public function getName()
+    {
+        return $this->name;
+    }
+    public function setName($value): void
+    {
+        $this->name = $value;
+    }
+    public function getIcon()
+    {
+        return $this->icon;
+    }
+    public function setIcon($value): void
+    {
+        $this->icon = $value;
     }
     public function getExternal(string $service): string
     {
@@ -67,9 +88,15 @@ class ScoreSeriesPointTypeEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
+            'icon' => $this->getIcon(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

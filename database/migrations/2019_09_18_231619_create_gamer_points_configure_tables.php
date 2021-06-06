@@ -30,7 +30,7 @@ class CreateGamerPointsConfigureTables extends Migration
             'pointables', function (Blueprint $table) {
                 $table->engine = 'InnoDB';
                 $table->increments('id')->unsigned();
-                $table->integer('pointable_id')->nullable();
+                $table->string('pointable_id')->nullable();
                 $table->string('pointable_type', 255)->nullable();
                 $table->string('relation', 255)->nullable();
 

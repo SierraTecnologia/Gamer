@@ -4,8 +4,16 @@ namespace Gamer\Models;
 
 use Pedreiro\Models\Base;
 
-class Point extends Base
+class Mission extends Base
 {
+    protected $table = 'missions';
+    
+    public $incrementing = false;
+    protected $casts = [
+        'code' => 'string',
+    ];
+    protected $primaryKey = 'code';
+    protected $keyType = 'string';
 
     /**
      * The attributes that are mass assignable.
@@ -13,16 +21,19 @@ class Point extends Base
      * @var array
      */
     protected $fillable = [
+        'code',
         'name',
-        'pointable_type',
-        'pointable_id',
-        'point_type_id'
+        'missionable_type',
+        'missionable_id',
+        'mission_type_id'
     ];
     public $formFields = [
+        ['name' => 'code', 'label' => 'Code', 'type' => 'text'],
         ['name' => 'name', 'label' => 'Name', 'type' => 'text'],
         ['name' => 'description', 'label' => 'Description', 'type' => 'textarea'],
     ];
     public $indexFields = [
+        'code',
         'name',
         'description',
     ];
@@ -35,15 +46,15 @@ class Point extends Base
             'type' => 'string',
             "analyzer" => "standard",
         ],
-        'pointable_type' => [
+        'missionable_type' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],
-        'pointable_id' => [
+        'missionable_id' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],
-        'point_type_id' => [
+        'mission_type_id' => [
             'type' => 'string',
             "analyzer" => "standard",
         ],
@@ -54,7 +65,7 @@ class Point extends Base
      */
     public function users()
     {
-        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'pointable');
+        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'missionable');
     }
 
     /**
@@ -62,6 +73,6 @@ class Point extends Base
      */
     public function persons()
     {
-        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Telefonica\Models\Actors\Person::class), 'pointable');
+        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Telefonica\Models\Actors\Person::class), 'missionable');
     }
 }

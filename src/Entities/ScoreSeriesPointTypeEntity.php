@@ -1,12 +1,12 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\ScoreSerie;
+use Gamer\Models\ScoreSeriesPointType;
 
-class ScoreSerieEntity extends AbstractEntity
+class ScoreSeriesPointTypeEntity extends AbstractEntity
 {
-    protected $model = ScoreSerie::class;
+    protected $model = ScoreSeriesPointType::class;
 
     private $id;
     private $name;
@@ -15,7 +15,7 @@ class ScoreSerieEntity extends AbstractEntity
     ];
 
     /**
-     * ScoreSerieEntity constructor.
+     * ScoreSeriesPointTypeEntity constructor.
      *
      * @param array $attributes
      */
@@ -33,7 +33,7 @@ class ScoreSerieEntity extends AbstractEntity
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): ScoreSerieEntity
+    private function setId(int $id): ScoreSeriesPointTypeEntity
     {
         $this->id = $id;
 
@@ -43,17 +43,9 @@ class ScoreSerieEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
-    }
-    public function getName(): string
-    {
-        return $this->name;
-    }
-    public function setName($value): void
-    {
-        $this->name = $value;
     }
     public function getExternal(string $service): string
     {
@@ -76,9 +68,14 @@ class ScoreSerieEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

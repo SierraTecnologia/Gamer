@@ -79,75 +79,195 @@ class GamerProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Painel' => [
-            // 'Gamer' => [
-                [
-                    'text'        => 'Gamification',
-                    'route'       => 'profile.gamer.home',
-                    'icon'        => 'fas fa-fw fa-gamepad',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "master",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                // [
-                //     'text'        => 'Root',
-                //     'route'       => 'rica.gamer.home',
-                //     'icon'        => 'fas fa-fw fa-flag',
-                //     'icon_color'  => 'blue',
-                //     'label_color' => 'success',
-                //     'section' => "master",
-                //     // 'access' => \Porteiro\Models\Role::$ADMIN
-                // ],
-                // ],
+        [
+            'text'        => 'Meus Pontos',
+            'route'       => 'profile.gamer.home',
+            'icon'        => 'fas fa-fw fa-gamepad',
+            'icon_color'  => 'blue',
+            'label_color' => 'success',
+            'order' => 260,
+            'section' => "profile",
+            'feature' => 'gamer',
+            'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            // 'access' => \Porteiro\Models\Role::$ADMIN
         ],
-        'Admin' => [
+        [
+            'text' => 'Gamificação',
+            'icon' => 'fas fa-fw fa-dice',
+            'icon_color' => "blue",
+            'label_color' => "success",
+            'order' => 2100,
+            // 'section'   => 'admin',
+            'feature' => 'gamer',
+            'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+        ],
+        'Gamificação' => [
             [
-                'text' => 'Gamer',
-                'icon' => 'fas fa-fw fa-search',
-                'icon_color' => "blue",
-                'label_color' => "success",
-                'section' => "admin",
-                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                'text'        => 'Challenges (Competições)',
+                'route'       => 'rica.gamer.competitions.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
-            'Gamer' => [
-                [
-                    'text'        => 'Score de Pontos',
-                    'route'       => 'profile.gamer.home',
-                    'icon'        => 'fas fa-fw fa-gamepad',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Badges (Metalhas)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Challenges (Competições)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Guests (Desafios)',
-                    'route'       => 'rica.gamer.home',
-                    'icon'        => 'fas fa-fw fa-flag',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    'section' => "admin",
-                    // 'access' => \Porteiro\Models\Role::$ADMIN
-                ],
+            [
+                'text'        => 'Jogadores de (Competições)',
+                'route'       => 'rica.gamer.competitionPlayers.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
             ],
+            [
+                'text'        => 'Pontos',
+                'route'       => 'rica.gamer.points.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Tipos de Pontos',
+                'route'       => 'rica.gamer.pointTypes.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'GamerEvents',
+                'route'       => 'rica.gamer.gamerEvents.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Jogadores',
+                'route'       => 'rica.gamer.players.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Questions',
+                'route'       => 'rica.gamer.questions.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Questions Responses',
+                'route'       => 'rica.gamer.questionResponses.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Score de Pontos',
+                'route'       => 'rica.gamer.scoreSeries.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Tipos de Score de Pontos',
+                'route'       => 'rica.gamer.scoreSeriePointTypes.index',
+                'icon'        => 'fas fa-fw fa-gamepad',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Times',
+                'route'       => 'rica.gamer.teams.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Transações',
+                'route'       => 'rica.gamer.transactions.index',
+                'icon'        => 'fas fa-fw fa-flag',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                'order' => 2100,
+                // 'section' => "admin",
+                'feature' => 'gamer',
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+                'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'access' => \Porteiro\Models\Role::$ADMIN
+            ],
+            // [
+            //     'text'        => 'Badges (Metalhas)',
+            //     'route'       => 'rica.gamer.home',
+            //     'icon'        => 'fas fa-fw fa-flag',
+            //     'icon_color'  => 'blue',
+            //     'label_color' => 'success',
+            //     'order' => 2100,
+            //     // 'section' => "admin",
+            //     'feature' => 'gamer',
+            //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            //     // 'access' => \Porteiro\Models\Role::$ADMIN
+            // ],
+            // [
+            //     'text'        => 'Guests (Desafios)',
+            //     'route'       => 'rica.gamer.home',
+            //     'icon'        => 'fas fa-fw fa-flag',
+            //     'icon_color'  => 'blue',
+            //     'label_color' => 'success',
+            //     'order' => 2100,
+            //     // 'section' => "admin",
+            //     'feature' => 'gamer',
+            //     'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
+            //     'level'       => 2, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            //     // 'access' => \Porteiro\Models\Role::$ADMIN
+            // ],
         ],
     ];
 
@@ -160,10 +280,10 @@ class GamerProvider extends ServiceProvider
         // Register configs, migrations, etc
         $this->registerDirectories();
 
-        // // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
-        // $this->app->booted(function () {
-        //     $this->routes();
-        // });
+        // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
+        $this->app->booted(function () {
+            $this->routes();
+        });
 
         //
         $this->app['events']->listen(
@@ -204,7 +324,7 @@ class GamerProvider extends ServiceProvider
         
 
         $this->setProviders();
-        $this->routes();
+        // $this->routes();
 
 
 
@@ -276,7 +396,7 @@ class GamerProvider extends ServiceProvider
     }
 
     /**
-     * Publish Tecnico configuration.
+     * Publish Gamer configuration.
      */
     protected function publishConfig()
     {
@@ -289,7 +409,7 @@ class GamerProvider extends ServiceProvider
     }
 
     /**
-     * Publish Tecnico migration.
+     * Publish Gamer migration.
      */
     protected function publishMigration()
     {
@@ -299,7 +419,7 @@ class GamerProvider extends ServiceProvider
             ], ['migrations', 'gamer', 'gamer-migrations', 'rica', 'rica-migrations']
         );
         // @todo
-        // if (! class_exists('TecnicoSetupTables')) {
+        // if (! class_exists('GamerSetupTables')) {
         //     // Publish the migration
         //     $timestamp = date('Y_m_d_His', time());
         //     $this->publishes([

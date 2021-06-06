@@ -1,22 +1,21 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\Team;
+use Gamer\Models\ScoreSerie;
 
-class TeamEntity extends AbstractEntity
+class ScoreSerieEntity extends AbstractEntity
 {
-    protected $model = Team::class;
+    protected $model = ScoreSerie::class;
 
     private $id;
     private $name;
-    private $icon;
     private $external = [
         'pointagram' => null,
     ];
 
     /**
-     * TeamEntity constructor.
+     * ScoreSerieEntity constructor.
      *
      * @param array $attributes
      */
@@ -28,16 +27,13 @@ class TeamEntity extends AbstractEntity
         if (isset($attributes['name']) && !is_null($attributes['name'])) {
             $this->setName($attributes['name']);
         }
-        if (isset($attributes['icon']) && !is_null($attributes['icon'])) {
-            $this->setIcon($attributes['icon']);
-        }
     }
 
     /**
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): TeamEntity
+    private function setId(int $id): ScoreSerieEntity
     {
         $this->id = $id;
 
@@ -47,11 +43,11 @@ class TeamEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -59,15 +55,7 @@ class TeamEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getIcon(): string
-    {
-        return $this->icon;
-    }
-    public function setIcon($value): void
-    {
-        $this->icon = $value;
-    }
-    public function getExternal(string $service): string
+    public function getExternal(string $service)
     {
         return $this->external[$service];
     }
@@ -88,9 +76,14 @@ class TeamEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

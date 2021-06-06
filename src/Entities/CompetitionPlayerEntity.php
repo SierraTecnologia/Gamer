@@ -1,22 +1,21 @@
 <?php
 
-namespace Gamer\Entitys;
+namespace Gamer\Entities;
 
-use Gamer\Models\Player;
+use Gamer\Models\CompetitionPlayer;
 
-class PlayerEntity extends AbstractEntity
+class CompetitionPlayerEntity extends AbstractEntity
 {
-    protected $model = Player::class;
+    protected $model = CompetitionPlayer::class;
 
     private $id;
     private $name;
-    private $email;
     private $external = [
         'pointagram' => null,
     ];
 
     /**
-     * PlayerEntity constructor.
+     * CompetitionPlayerEntity constructor.
      *
      * @param array $attributes
      */
@@ -28,22 +27,13 @@ class PlayerEntity extends AbstractEntity
         if (isset($attributes['name']) && !is_null($attributes['name'])) {
             $this->setName($attributes['name']);
         }
-        if (isset($attributes['Name']) && !is_null($attributes['Name'])) {
-            $this->setName($attributes['Name']);
-        }
-        if (isset($attributes['email']) && !is_null($attributes['email'])) {
-            $this->setName($attributes['email']);
-        }
-        if (isset($attributes['emailaddress']) && !is_null($attributes['emailaddress'])) {
-            $this->setName($attributes['emailaddress']);
-        }
     }
 
     /**
      * @param  int $id
      * @return $this
      */
-    private function setId(int $id): PlayerEntity
+    private function setId(int $id): CompetitionPlayerEntity
     {
         $this->id = $id;
 
@@ -53,11 +43,11 @@ class PlayerEntity extends AbstractEntity
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -65,15 +55,7 @@ class PlayerEntity extends AbstractEntity
     {
         $this->name = $value;
     }
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
-    public function setEmail(string $value): void
-    {
-        $this->email = $value;
-    }
-    public function getExternal(string $service): string
+    public function getExternal(string $service)
     {
         return $this->external[$service];
     }
@@ -94,9 +76,14 @@ class PlayerEntity extends AbstractEntity
      */
     public function toArray(): array
     {
-        return [
-            'id' => $this->getId(),
+        $data = [
             'name' => $this->getName(),
         ];
+
+        if (!is_null($this->getId())) {
+            $data['id'] = $this->getId();
+        }
+        
+        return $data;
     }
 }

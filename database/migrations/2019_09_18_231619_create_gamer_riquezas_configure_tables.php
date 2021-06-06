@@ -35,7 +35,7 @@ class CreateGamerRiquezasConfigureTables extends Migration
             'coinables', function (Blueprint $table) {
                 $table->engine = 'InnoDB';
                 $table->increments('id')->unsigned();
-                $table->integer('coinable_id')->nullable();
+                $table->string('coinable_id')->nullable();
                 $table->string('coinable_type', 255)->nullable();
                 $table->string('relation', 255)->nullable();
 

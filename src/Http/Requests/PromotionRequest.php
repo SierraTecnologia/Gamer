@@ -30,6 +30,6 @@ class PromotionRequest extends FormRequest
      */
     public function rules()
     {
-        return Promotion::$rules;
+        return app(Promotion::class)->rules;
     }
 }
