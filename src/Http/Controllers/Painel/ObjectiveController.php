@@ -2,17 +2,17 @@
 
 namespace Gamer\Http\Controllers\Painel;
 
-use Gamer\Models\Meta;
+use Gamer\Models\Objective;
 use Gamer\Services\GamerService;
 use Illuminate\Support\Facades\Schema;
 use Pedreiro\CrudController;
 
-class MetaController extends Controller
+class ObjectiveController extends Controller
 {
     use CrudController;
 
 
-    public function __construct(Meta $model)
+    public function __construct(Objective $model)
     {
         $this->model = $model;
         parent::__construct();

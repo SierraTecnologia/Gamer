@@ -18,13 +18,13 @@ And then include the service provider within `app/config/app.php`.
 
 ```php
 'providers' => [
-    Gamer\PointableServiceProvider::class
+    Gamer\GamerProvider::class
 ];
 ```
 
 At last you need to publish and run the migration.
 ```
-php artisan vendor:publish --provider="Gamer\PointableServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="Gamer\GamerProvider" && php artisan migrate
 ```
 
 -----
@@ -86,6 +86,13 @@ $user = User::first();
 $user['transactions_total'] = $user->countTransactions();
 
 dd($user);
+```
+
+### Connecting to Pointagram
+
+Add pointagram token to your .env
+```
+SERVICES_POINTAGRAM_KEY=token_aqui_blalblabla
 ```
 
 ## Changelog

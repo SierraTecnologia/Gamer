@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
-
+use Gamer\Connectors\Pointagram;
 use Gamer\Entities\PlayerEntity;
 use Gamer\Entities\TeamEntity;
 use Gamer\Entities\CompetitionEntity;
@@ -18,40 +18,35 @@ use Gamer\Entities\ScoreSeriesPointTypeEntity;
 
 class ConnectorService
 {
+    public $service;
 
     public function __construct()
     {
-        // $this->imageRepo = App::make('MediaManager\Repositories\ImageRepository');
+        $this->service = new Pointagram();
     }
     public function extract()
     {
-        $p = new \Gamer\Connectors\Pointagram();
+        $this->service->listPlayers()->map(function(PlayerEntity $entity) {
+            $entity->persist();
+        });
 
+        $this->service->listTeams()->map(function(TeamEntity $entity) {
+            $entity->persist();
+        });
+
+        $this->service->listCompetitions()->map(function(CompetitionEntity $entity) {
+            $entity->persist();
+        });
+
+        $this->service->listCompetitionPlayers()->map(function(CompetitionPlayerEntity $entity) {
+            $entity->persist();
+        });
         
-        $p->listPlayers()->map(function(PlayerEntity $entity) {
+        $this->service->listScoreSeries()->map(function(ScoreSerieEntity $entity) {
             $entity->persist();
         });
 
-
-        $p->listTeams()->map(function(TeamEntity $entity) {
-            $entity->persist();
-        });
-
-
-        $p->listCompetitions()->map(function(CompetitionEntity $entity) {
-            $entity->persist();
-        });
-
-        $p->listCompetitionPlayers()->map(function(CompetitionPlayerEntity $entity) {
-            $entity->persist();
-        });
-
-        
-        $p->listScoreSeries()->map(function(ScoreSerieEntity $entity) {
-            $entity->persist();
-        });
-
-        $p->listScoreSeriesPointTypes()->map(function(ScoreSeriesPointTypeEntity $entity) {
+        $this->service->listScoreSeriesPointTypes()->map(function(ScoreSeriesPointTypeEntity $entity) {
             $entity->persist();
         });
     }

@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 
 trait Pointable
 {
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\MorphMany
-    //  */
-    // public function transactions($amount = null)
-    // {
-    //     return $this->morphMany(Transaction::class, 'pointable')->orderBy('created_at', 'desc')->take($amount);
-    // }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\MorphMany
+     */
+    public function transactions($amount = null)
+    {
+        return $this->morphMany(Transaction::class, 'pointable')->orderBy('created_at', 'desc')->take($amount);
+    }
 
     /**
      * Get all of the points for the post.

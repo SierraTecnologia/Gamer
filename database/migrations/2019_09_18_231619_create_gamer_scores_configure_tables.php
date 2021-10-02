@@ -28,6 +28,7 @@ class CreateGamerScoresConfigureTables extends Migration
                 $table->engine = 'InnoDB';
                 $table->increments('id')->unsigned();
                 $table->string('name', 255)->nullable();
+                $table->string('icon', 255)->nullable();
                 $table->timestamps();
                 $table->softDeletes();
             }

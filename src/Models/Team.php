@@ -6,7 +6,7 @@ use Pedreiro\Models\Base;
 
 class Team extends Base
 {
-
+    public $table = 'gamer_teams';
     /**
      * The attributes that are mass assignable.
      *
