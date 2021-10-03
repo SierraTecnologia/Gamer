@@ -17,23 +17,26 @@ class Pointable
         
     }
     
-    public function setComponent($component)
+    /**
+     * @return static
+     */
+    public function setComponent($component): self
     {
         $this->component = $component;
         return $this;
     }
     
-    public function setReferenceComponent($referenceComponent)
+    public function setReferenceComponent($referenceComponent): void
     {
         $this->referenceComponent = $referenceComponent;
     }
 
-    public function run()
+    public function run(): void
     {
 
     }
     
-    public function profileToProfile()
+    public function profileToProfile(): void
     {
         // Get Points from Profile Fa
 

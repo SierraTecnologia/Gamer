@@ -7,7 +7,7 @@ namespace Gamer\Pointable;
 
 class Interaja
 {
-    public static function run()
+    public static function run(): void
     {
 
     }

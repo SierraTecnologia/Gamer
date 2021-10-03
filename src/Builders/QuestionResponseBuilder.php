@@ -96,7 +96,7 @@ class QuestionResponseBuilder extends Builder
      */
     public function searchByPhrase(string $searchPhrase)
     {
-        $whereSearchPhraseScope = function (Builder $query, string $searchPhrase) {
+        $whereSearchPhraseScope = function (Builder $query, string $searchPhrase): void {
             $query
                 ->where("{$this->postsTable}.description", 'like', "%{$searchPhrase}%")
                 ->orWhereHas(

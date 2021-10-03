@@ -56,16 +56,20 @@ class Question extends Base
 
     /**
      * Retorna Todos os Requisitos para que essa Pergunta possa ser feita!
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function requisitos()
+    public function requisitos(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Post::class, Tables::TABLE_POSTS_TAGS);
     }
 
     /**
      * Retorna o Skill e um Numero entre 0 e 1 para esse Video
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
      */
-    public function skills()
+    public function skills(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Post::class, Tables::TABLE_POSTS_TAGS);
     }

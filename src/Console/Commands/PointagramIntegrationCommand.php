@@ -24,8 +24,10 @@ class PointagramIntegrationCommand extends Command
 
     /**
      * Execute the console command.
+     *
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
             $this->info("Preparando para sincronizar com pointagram");
             app(ConnectorService::class)->extract();

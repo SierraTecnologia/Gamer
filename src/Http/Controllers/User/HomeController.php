@@ -16,6 +16,9 @@ class HomeController extends Controller
         $this->profileService = $profileService;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         return view('gamer::profile.home.index');

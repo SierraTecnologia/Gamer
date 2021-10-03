@@ -24,7 +24,7 @@ class ConnectorService
     {
         $this->service = new Pointagram();
     }
-    public function extract()
+    public function extract(): void
     {
         $this->service->listPlayers()->map(function(PlayerEntity $entity) {
             $entity->persist();

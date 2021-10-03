@@ -12,9 +12,9 @@ class GamerResponseService
      * @param string $type    Response type
      * @param string $message Response string
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public static function apiResponse($type, $message, $code = 200)
+    public static function apiResponse($type, $message, $code = 200): \Illuminate\Http\JsonResponse
     {
         return Response::json(['status' => $type, 'data' => $message], $code);
     }
@@ -25,9 +25,9 @@ class GamerResponseService
      * @param array $errors Validation errors
      * @param array $inputs Input values
      *
-     * @return Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public static function apiErrorResponse($errors, $inputs)
+    public static function apiErrorResponse($errors, $inputs): \Illuminate\Http\JsonResponse
     {
         $message = [];
         foreach ($inputs as $key => $value) {

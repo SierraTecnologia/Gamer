@@ -16,7 +16,7 @@ class Job
         
     }
     
-    public function run()
+    public function run(): void
     {
         
     }

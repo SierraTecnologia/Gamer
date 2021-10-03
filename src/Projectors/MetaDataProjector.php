@@ -15,7 +15,7 @@ class MetaDataProjector extends Projector
         MoneyAdded::class => 'onMoneyAdded',
     ];
 
-    public function onMoneyAdded(StoredEvent $storedEvent, StoredEventRepository $repository)
+    public function onMoneyAdded(StoredEvent $storedEvent, StoredEventRepository $repository): void
     {
         if (! Projectionist::isReplaying()) {
             $storedEvent->meta_data['user_id'] = auth()->user()->id;

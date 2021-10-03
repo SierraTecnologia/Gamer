@@ -13,12 +13,12 @@ class CollectDados
         
     }
 
-    public function run()
+    public function run(): void
     {
         $this->byPeriod();
     }
 
-    public function byPeriod()
+    public function byPeriod(): void
     {
         
         // @todo Fazer

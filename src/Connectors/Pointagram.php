@@ -38,10 +38,11 @@ class Pointagram
      * prepCurl - prepare the curl object
      *
      * @param string $url URL
+     * @param (int|mixed|string)[]|null $postArray
      *
      * @return mixed
      */
-    private function prepCurl($url, $postArray = null)
+    private function prepCurl($url, ?array $postArray = null)
     {
         $headers = array(
             'api_key: ' . config('gamer.services.pointagram', null),
@@ -69,7 +70,7 @@ class Pointagram
     /**
      * listPlayers
      *
-     * @return array (containing id's of pr's)
+     * @return Collection (containing id's of pr's)
      */
     public function listPlayers(): Collection
     {
@@ -191,9 +192,11 @@ class Pointagram
      *
      * @param string $branch branch name
      *
-     * @return array
+     * @return array|null
+     *
+     * @psalm-return list<mixed>|null
      */
-    public function add_to_team($branch)
+    public function add_to_team($branch): ?array
     {
         // {
         // “player_id”: “121212”,
@@ -224,7 +227,7 @@ class Pointagram
      *
      * @param string $key PR id
      *
-     * @return array
+     * @return bool|string
      */
     public function removeFromTeam($key)
     {
@@ -256,7 +259,7 @@ class Pointagram
      *
      * @param string $key PR id
      *
-     * @return array
+     * @return bool|string
      */
     public function addScore($key)
     {

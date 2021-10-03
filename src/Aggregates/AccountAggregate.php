@@ -5,28 +5,40 @@ use Spatie\EventSourcing\AggregateRoots\AggregateRoot;
 
 class AccountAggregate extends AggregateRoot
 {
-    public function createAccount(string $name, string $userId)
+    /**
+     * @return static
+     */
+    public function createAccount(string $name, string $userId): self
     {
         $this->recordThat(new AccountCreated($name, $userId));
         
         return $this;
     }
 
-    public function addMoney(int $amount)
+    /**
+     * @return static
+     */
+    public function addMoney(int $amount): self
     {
         $this->recordThat(new MoneyAdded($amount));
         
         return $this;
     }
 
-    public function subtractAmount(int $amount)
+    /**
+     * @return static
+     */
+    public function subtractAmount(int $amount): self
     {
         $this->recordThat(new MoneySubtracted($amount));
         
         return $this;
     }
 
-    public function deleteAccount()
+    /**
+     * @return static
+     */
+    public function deleteAccount(): self
     {
         $this->recordThat(new AccountDeleted());
         

@@ -9,7 +9,7 @@ use SiSeed\Abstrato\Questions\AboutMe;
 
 class ConteSobreVoce
 {
-    public static function run()
+    public static function run(): void
     {
         $questionRoutine = new AboutMe();
 

@@ -55,7 +55,7 @@ class PointType extends Base
         ],
     );
 
-    public function points()
+    public function points(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('Gamer\Models\Point', 'point_type_id', 'id');
     }
