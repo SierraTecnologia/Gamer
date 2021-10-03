@@ -51,16 +51,20 @@ class Point extends Base
 
     /**
      * Get all of the users that are assigned this tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function users()
+    public function users(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'pointable');
     }
 
     /**
      * Get all of the slaves that are assigned this tag.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function persons()
+    public function persons(): \Illuminate\Database\Eloquent\Relations\MorphToMany
     {
         return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Telefonica\Models\Actors\Person::class), 'pointable');
     }

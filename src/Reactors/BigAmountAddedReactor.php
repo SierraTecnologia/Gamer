@@ -13,7 +13,7 @@ class BigAmountAddedReactor
 
     ];
 
-    public function onMoneyAdded(MoneyAdded $event)
+    public function onMoneyAdded(MoneyAdded $event): void
     {
         // do some work
     }

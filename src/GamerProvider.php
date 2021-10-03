@@ -273,8 +273,10 @@ class GamerProvider extends ServiceProvider
 
     /**
      * Alias the services in the boot.
+     *
+     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         
         // Register configs, migrations, etc
@@ -397,8 +399,10 @@ class GamerProvider extends ServiceProvider
 
     /**
      * Publish Gamer configuration.
+     *
+     * @return void
      */
-    protected function publishConfig()
+    protected function publishConfig(): void
     {
         // Publish config files
         $this->publishes([
@@ -410,8 +414,10 @@ class GamerProvider extends ServiceProvider
 
     /**
      * Publish Gamer migration.
+     *
+     * @return void
      */
-    protected function publishMigration()
+    protected function publishMigration(): void
     {
         $this->publishes(
             [
@@ -428,7 +434,7 @@ class GamerProvider extends ServiceProvider
         // }
     }
 
-    private function loadViews()
+    private function loadViews(): void
     {
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
@@ -440,7 +446,7 @@ class GamerProvider extends ServiceProvider
         );
     }
     
-    private function loadTranslations()
+    private function loadTranslations(): void
     {
         // Publish lanaguage files
         $this->publishes(

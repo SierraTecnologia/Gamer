@@ -5,7 +5,12 @@ namespace Gamer\Services;
 class MenuService
 {
 
-    public static function getAdminMenu()
+    /**
+     * @return array[]
+     *
+     * @psalm-return non-empty-list<array<empty, empty>>
+     */
+    public static function getAdminMenu(): array
     {
         $gamer = [];
         $gamer[] = [

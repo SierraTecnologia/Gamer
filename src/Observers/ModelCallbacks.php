@@ -19,12 +19,13 @@ class ModelCallbacks extends BaseObserver
     /**
      * Handle all model events, both Eloquent and Decoy
      *
-     * @param  string $event
-     * @param  array  $payload Contains:
+     * @param string $event
+     * @param array  $payload Contains:
      *                         -
      *                         Facilitador\Models\Base
      *                         $model
-     * @return void
+     *
+     * @return null|true
      */
     public function handle($event, $payload)
     {

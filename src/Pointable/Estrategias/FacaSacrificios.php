@@ -7,7 +7,7 @@ namespace Gamer\Pointable;
 
 class FacaSacrificios
 {
-    public static function run()
+    public static function run(): void
     {
 
     }

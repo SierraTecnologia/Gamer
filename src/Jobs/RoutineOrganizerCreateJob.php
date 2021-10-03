@@ -35,9 +35,9 @@ class RoutineOrganizerCreateJob implements ShouldQueue
     /**
      * Execute the job.
      *
-     * @return void
+     * @return bool
      */
-    public function handle()
+    public function handle(): bool
     {
         $organizerResult = Organizer::getOrganizerServiceForUser($this->user, $this->companyToken)->foundOrganizerDataByToken();
         if (empty($organizerResult)) {

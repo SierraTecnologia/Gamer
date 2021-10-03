@@ -16,6 +16,9 @@ class HomeController extends Controller
         $this->rootService = $rootService;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         return view('gamer::root.home.index');

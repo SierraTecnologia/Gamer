@@ -13,17 +13,17 @@ class CalculeStat
         
     }
 
-    public function run()
+    public function run(): void
     {
         $this->byPeriod();
     }
 
-    public function byPeriod()
+    public function byPeriod(): void
     {
         $this->forIntegrations();
     }
     
-    public function forIntegrations()
+    public function forIntegrations(): void
     {
         $selfClass = $this;
         $this->board->executeForEachIntegration(
@@ -33,7 +33,7 @@ class CalculeStat
         );
     }
     
-    public function forComponents($integration)
+    public function forComponents($integration): void
     {
         $selfClass = $this;
         $this->board->executeForEachComponent(

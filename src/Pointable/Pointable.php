@@ -7,7 +7,7 @@ namespace Gamer\Pointable;
 
 class Pointable
 {
-    public static function acoes()
+    public static function acoes(): void
     {
         PointType::create(
             [
@@ -17,10 +17,12 @@ class Pointable
         );
     }
 
-    /** 
+    /**
      * Complete seu Perfil
+     *
+     * @return void
      */
-    public static function sobreVoce()
+    public static function sobreVoce(): void
     {
         PointType::create(
             [
@@ -36,7 +38,7 @@ class Pointable
         );
     }
 
-    public static function feedbacks()
+    public static function feedbacks(): void
     {
         PointType::create(
             [

@@ -12,7 +12,7 @@ use Request;
  */
 class LoginObserver extends BaseObserver
 {
-    public function handle($event)
+    public function handle($event): void
     {
         // Log::warning($event); // @todo Veio como objetio bject of class Illuminate\Auth\Events\Login could not be converted to string
         // list($model) = $payload;
@@ -26,8 +26,9 @@ class LoginObserver extends BaseObserver
     }
 
     /**
+     * @return void
      */
-    private function updateRelationship($model, $relationship)
+    private function updateRelationship($model, $relationship): void
     {
 
         // Fire completion event

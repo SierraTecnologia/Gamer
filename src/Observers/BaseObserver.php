@@ -25,7 +25,7 @@ class BaseObserver
     protected $action = false;
     
 
-    protected function isToIgnore($model, string $event)
+    protected function isToIgnore($model, string $event): bool
     {
         // Don't log changes to pivot models.  Even though a user may have initiated
         // this, it's kind of meaningless to them.  These events can happen when a
@@ -55,7 +55,12 @@ class BaseObserver
         return false;
     }
 
-    protected function getDontLog()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: 'Aschmelyun\Larametrics\Models\LarametricsLog', 1: 'Illuminate\Database\Eloquent\Relations\Pivot'}
+     */
+    protected function getDontLog(): array
     {
         return [
             'Aschmelyun\Larametrics\Models\LarametricsLog',
@@ -63,7 +68,12 @@ class BaseObserver
         ];
     }
 
-    protected function getDontLogAlias()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: 'Tracking\Models', 1: 'Analytics', 2: 'Spatie\Analytics', 3: 'Wnx\LaravelStats', 4: 'Aschmelyun\Larametrics\Models', 5: 'Laravel\Horizon', 6: 'Support\Models\Application', 7: 'Support\Models\Ardent', 8: 'Support\Models\Code'}
+     */
+    protected function getDontLogAlias(): array
     {
         return [
             'Tracking\Models',

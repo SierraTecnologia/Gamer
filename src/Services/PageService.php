@@ -14,11 +14,17 @@ class PageService
         $this->type = $type;
     }
 
-    public static function getService(Type $type)
+    /**
+     * @return static
+     */
+    public static function getService(Type $type): self
     {
         return new static($type);
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function getView()
     {
         return view('gamer::pages.points.index');

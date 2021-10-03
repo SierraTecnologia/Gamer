@@ -17,12 +17,12 @@ class BlogPolicy
         return $user->isAuthorOf($blog);
     }
 
-    public function manage(User $user, Blog $blog)
+    public function manage(User $user, Blog $blog): bool
     {
         return $blog->managers()->where('user_id', $user->id)->count() > 0;
     }
 
-    public function createArticle(User $user, Blog $blog)
+    public function createArticle(User $user, Blog $blog): bool
     {
         return $user->isAuthorOf($blog) || Gate::allows('manage', $blog);
     }
