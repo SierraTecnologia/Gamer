@@ -84,5 +84,10 @@
                 "Gamer\\GamerProvider"
             ]
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "phpro/grumphp": true
+        }
     }
 }
