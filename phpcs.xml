@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ruleset name="Gamer Coding Standard">
+    <description>PSR-12 Coding Standard for SierraTecnologia/Gamer</description>
+
+    <!-- Arquivos a verificar -->
+    <file>src</file>
+    <file>tests</file>
+
+    <!-- Excluir -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/database/migrations/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/publishes/*</exclude-pattern>
+
+    <!-- Usar PSR-12 -->
+    <rule ref="PSR12"/>
+
+    <!-- Configurações adicionais -->
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="parallel" value="75"/>
+
+    <!-- Line length -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="150"/>
+        </properties>
+    </rule>
+</ruleset>
